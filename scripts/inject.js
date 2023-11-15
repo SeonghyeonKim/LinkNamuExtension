@@ -61,8 +61,6 @@ chrome.storage.local.get(["turn"], function (result) {
 
 window.addEventListener("wheel", function (event) {
   if (window.scrollY === 0 && event.deltaY < 0) {
-    this.window.location.replace(
-      "https://kc709aacd7d14a.user-app.krampoline.com/"
-    );
+    window.location.href = "https://kc709aacd7d14a.user-app.krampoline.com/";
   }
 });
