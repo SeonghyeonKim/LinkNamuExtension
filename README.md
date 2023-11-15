@@ -14,4 +14,5 @@
 ![image](https://github.com/SeonghyeonKim/LinkNamuExtension/assets/48244988/5fbe281c-6173-4396-a244-61b4985ef7d1)
 <br>
 버튼 활성화 시, 좌측 하단에 링크나무로 이동하는 버튼을 생성합니다.
+<br>
 스크롤 활성화 시, 화면 최상단에서 마우스 휠을 위로 올리면, 링크나무로 이동합니다.
