@@ -46,7 +46,7 @@ chrome.storage.local.get(["turn"], function (result) {
   else if (result.turn === "OFF") myButton.innerText = "버튼 활성화";
 });
 
-chrome.storage.local.get(["turn"], function (result) {
-  if (result.turn === "ON") myButton2.innerText = "스크롤 비활성화";
-  else if (result.turn === "OFF") myButton2.innerText = "스크롤 활성화";
+chrome.storage.local.get(["scroll"], function (result) {
+  if (result.scroll === "ON") myButton2.innerText = "스크롤 비활성화";
+  else if (result.scroll === "OFF") myButton2.innerText = "스크롤 활성화";
 });
