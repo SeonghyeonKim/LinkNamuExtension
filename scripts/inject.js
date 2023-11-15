@@ -51,16 +51,32 @@ function handle(message) {
   }
 }
 
+function scrollHandler(event) {
+  if (window.scrollY === 0 && event.deltaY < 0) {
+    window.location.href = "https://kc709aacd7d14a.user-app.krampoline.com/";
+  }
+}
+
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  handle(request.message);
+  if (request.message === "ON" || request.message === "OFF") {
+    handle(request.message);
+  } else {
+    if (request.message === "scrollOn") {
+      window.addEventListener("wheel", scrollHandler);
+    } else {
+      window.removeEventListener("wheel", scrollHandler);
+    }
+  }
 });
 
 chrome.storage.local.get(["turn"], function (result) {
   handle(result.turn);
 });
 
-window.addEventListener("wheel", function (event) {
-  if (window.scrollY === 0 && event.deltaY < 0) {
-    window.location.href = "https://kc709aacd7d14a.user-app.krampoline.com/";
+chrome.storage.local.get(["scroll"], function (result) {
+  if (result.scroll === "ON") {
+    window.addEventListener("wheel", scrollHandler);
+  } else if (result.scroll === "OFF") {
+    window.removeEventListener("wheel", scrollHandler);
   }
 });
